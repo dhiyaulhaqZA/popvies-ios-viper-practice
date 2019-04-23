@@ -30,7 +30,7 @@ class NetworkHandler<T: Codable> {
                         let result = try JSONDecoder().decode(T.self, from: successResponse.data)
                         callback(.success(result))
                     } else {
-                        callback(.failure("Something went wrong [\(statusCode)]", statusCode))
+                        callback(.failure("Something went wrong", statusCode))
                     }
                 } catch {
                     callback(.failure("Something went wrong", statusCode))
